@@ -48,11 +48,35 @@ function generatePassword() {
     }
       
     return passwd;
-  }
+}
   
-  function gfg_Run() {
+function gfg_Run() {
     el_down.innerHTML = generateP();
-  }
+}
+
+function userChoice() {
+    passwordLength = parseInt(prompt("how many characters do you want to generate?"));
+    while(isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
+      passwordLength = parseInt(prompt("how many characters do you want to generate?"));
+      console.log(passwordLength);
+      console.log("password_length"); 
+    }
+      isLowercase = confirm("would you like to add lowercase?");
+      isCaps = confirm("would you like to add capitals?");
+      isSymbols = confirm("would you like to add symbols?");
+      isNumbers = confirm("would you like to add numbers?");
+  
+    
+  
+}
+  
+  
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+  
+function askUser() {
+    var userChoice = prompt("how many characters do you want to generate?")
+}
 
 // GIVEN I need a new, secure password
 // WHEN I click the button to generate a password
