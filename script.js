@@ -24,7 +24,35 @@ function writePassword() {
 // Add event listener to generate button (given)
 generateBtn.addEventListener("click", writePassword);
 
-
+function generatePassword() {
+    userChoice();
+    var passwd = '';
+    if(isLowercase){
+      
+      userOptions=userOptions.concat(lowercase.split(""))
+      
+    }
+    if(isCaps){
+      userOptions=userOptions.concat(caps.split(""))
+    }
+    if(isNumbers){
+      useroptions=userOptions.concat(numbers.split(""))
+    }
+    if(isSymbols){
+      userOptions=userOptions.concat(symbols.split(""))
+    }
+    console.log(userOptions);
+    for(var i = 0; i < passwordLength; i++) {
+      var char = Math.floor(Math.random() * userOptions.length );
+      passwd += userOptions[char]
+    }
+      
+    return passwd;
+  }
+  
+  function gfg_Run() {
+    el_down.innerHTML = generateP();
+  }
 
 // GIVEN I need a new, secure password
 // WHEN I click the button to generate a password
